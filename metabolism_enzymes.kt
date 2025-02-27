@@ -12,6 +12,11 @@ private enum class Amount {
     SMALL
 }
 
+private enum class EnzymeStatus {
+    ENZYME,
+    ENZYME_SUBSTRATE
+}
+
 private abstract class Metabolism {
     abstract val reaction: Reaction 
     abstract val energyChange: EnergyChange
@@ -34,6 +39,7 @@ private class Enzymes {
     val isChemicallyAlteredByReaction = false
     val isReusable = true
     val amountNeededPerReaction = Amount.SMALL
+    val baseType = EnzymeStatus.ENZYME
 }
 
 private fun main() {
