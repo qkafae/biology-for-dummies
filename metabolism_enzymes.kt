@@ -1,33 +1,33 @@
-enum class Reaction {
+private enum class Reaction {
     BUILDING_UP,
     BREAKING_DOWN
 }
 
-enum class EnergyChange {
+private enum class EnergyChange {
     ABSORB, 
     RELEASE
 }
 
-enum class Amount {
+private enum class Amount {
     SMALL
 }
 
-abstract class Metabolism {
+private abstract class Metabolism {
     abstract val reaction: Reaction 
     abstract val energyChange: EnergyChange
 }
 
-class Anabolism: Metabolism() {
+private class Anabolism: Metabolism() {
     override val reaction = Reaction.BUILDING_UP
     override val energyChange = EnergyChange.ABSORB
 }
 
-class Catabolism: Metabolism() {
+private class Catabolism: Metabolism() {
     override val reaction = Reaction.BREAKING_DOWN
     override val energyChange = EnergyChange.RELEASE
 }
 
-class Enzymes {
+private class Enzymes {
     // enzymes are biological catalysts, providing alternative pathway with lower activation energy
     
     val isUsedUpByReaction = false
